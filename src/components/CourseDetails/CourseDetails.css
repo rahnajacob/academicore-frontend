@@ -1,0 +1,24 @@
+.course-details {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .course-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .course-details h3 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .course-actions {
+    margin-top: 20px;
+  }
+  
+  .course-actions button,
+  .course-actions a {
+    margin-right: 10px;
+  }

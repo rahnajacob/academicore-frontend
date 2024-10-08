@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 import { useState, useEffect, useContext } from "react"
 import * as courseService from '../../services/courseService'
 import { AuthedUserContext } from "../../App"
+import './CourseDetails.css'
 
 const CourseDetails = ({handleDeleteCourse}) => {
     const [course, setCourse] = useState(null)

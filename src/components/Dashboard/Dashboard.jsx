@@ -1,5 +1,6 @@
 import { AuthedUserContext } from "../../App"
 import { useContext } from "react"
+import './Dashboard.css'
 
 const Dashboard = ({user}) => {
     return(

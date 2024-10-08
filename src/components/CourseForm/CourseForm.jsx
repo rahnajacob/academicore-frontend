@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import * as courseService from '../../services/courseService'
+import './CourseForm.css'
 
 const CourseForm = ({ handleAddCourse, handleUpdateCourse }) => {
     const [formData, setFormData] = useState({

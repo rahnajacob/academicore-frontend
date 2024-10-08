@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useEffect } from "react"
+import './CoursesList.css'
 
 const CoursesList = ({courses}) => {
 

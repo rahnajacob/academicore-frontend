@@ -14,7 +14,7 @@ import CourseForm from './components/CourseForm/CourseForm'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
+import './App.css'
 export const AuthedUserContext = createContext(null)
 
 const App = () => {
@@ -70,15 +70,14 @@ const App = () => {
     navigate(`/courses/${courseId}`)
   }
 
-
   return (
-    <>
-      <AuthedUserContext.Provider value={user}>
+    <AuthedUserContext.Provider value={user}>
+      <div className="d-flex flex-column min-vh-100">
         <NavBar user={user} handleSignout={handleSignout} />
-        {user ? (
-          <>
-            <Container>
-              <Row>
+        <Container fluid className="flex-grow-1 mt-3">
+          <Row className="justify-content-center">
+            <Col xs={12} md={10} lg={8}>
+              {user ? (
                 <Routes>
                   <Route path="/" element={<Dashboard user={user} />} />
                   <Route path="/courses/" element={<CoursesList user={user} courses={courses} />} />
@@ -86,27 +85,57 @@ const App = () => {
                   <Route path="/courses/new" element={<CourseForm handleAddCourse={handleAddCourse} />} />
                   <Route path="/courses/:courseId/edit" element={<CourseForm handleUpdateCourse={handleUpdateCourse} />} />
                 </Routes>
-              </Row>
-            </Container>
-          </>
-        ) : (
-          <>
-            <Container>
-              <Row>
+              ) : (
                 <Routes>
                   <Route path="/" element={<Landing user={user} />} />
                   <Route path="/auth/sign-in/" element={<SignInForm setUser={setUser} />} />
                   <Route path="/auth/sign-up/teacher" element={<SignUpForm setUser={setUser} />} />
                 </Routes>
-              </Row>
-              {/* url change here */}
-            </Container>
-          </>
-        )}
-
-      </AuthedUserContext.Provider >
-    </>
+              )}
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </AuthedUserContext.Provider>
   )
 }
+
+//   return (
+//     <>
+//       <AuthedUserContext.Provider value={user}>
+//         <NavBar user={user} handleSignout={handleSignout} />
+//         {user ? (
+//           <>
+//             <Container>
+//               <Row>
+//                 <Routes>
+//                   <Route path="/" element={<Dashboard user={user} />} />
+//                   <Route path="/courses/" element={<CoursesList user={user} courses={courses} />} />
+//                   <Route path="/courses/:courseId" element={<CourseDetails user={user} courses={courses} handleDeleteCourse={handleDeleteCourse} />} />
+//                   <Route path="/courses/new" element={<CourseForm handleAddCourse={handleAddCourse} />} />
+//                   <Route path="/courses/:courseId/edit" element={<CourseForm handleUpdateCourse={handleUpdateCourse} />} />
+//                 </Routes>
+//               </Row>
+//             </Container>
+//           </>
+//         ) : (
+//           <>
+//             <Container>
+//               <Row>
+//                 <Routes>
+//                   <Route path="/" element={<Landing user={user} />} />
+//                   <Route path="/auth/sign-in/" element={<SignInForm setUser={setUser} />} />
+//                   <Route path="/auth/sign-up/teacher" element={<SignUpForm setUser={setUser} />} />
+//                 </Routes>
+//               </Row>
+//               {/* url change here */}
+//             </Container>
+//           </>
+//         )}
+
+//       </AuthedUserContext.Provider >
+//     </>
+//   )
+// }
 
 export default App
