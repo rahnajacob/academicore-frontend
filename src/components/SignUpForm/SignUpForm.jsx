@@ -42,21 +42,6 @@ const SignUpForm = ({ setUser }) => {
         }
     }
 
-
-    //     e.preventDefault()
-    //     try {
-    //         const { user, token } = await authService.signup(formData)
-    //         console.log("user is:", user)
-    //         setUser(user) 
-    //         console.log("token is", token)
-    //         localStorage.setItem('token', token) 
-    //         navigate('/') 
-    //     } catch (error) {
-    //         console.log(error)
-    //         setMessage(error.message)
-    //     }
-    // }
-
     return (
         <main className='form-page'>
             <h1>Sign Up</h1>

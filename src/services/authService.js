@@ -25,9 +25,6 @@ export const signup = async (formData) => {
         } else {
             throw new Error("No access token")
         }
-        // if (resBody.error) {
-        //     throw new Error("resbody err:", resBody.error)
-        // }
     } catch (err) {
         throw new Error(err.message)
     }

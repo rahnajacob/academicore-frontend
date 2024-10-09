@@ -34,11 +34,6 @@ const SignInForm = (props) => {
         }
     }
 
-    // const { username, password, password_confirmation } = formData
-    // const isFormInvalid = () => {
-    //     return !(username, password, password_confirmation)
-    // }
-
     return (
         <main className='form-page'>
             <h1>Sign In</h1>

@@ -3,12 +3,6 @@ import { useEffect } from "react"
 import './CoursesList.css'
 
 const CoursesList = ({courses}) => {
-
-    // useEffect(() => {
-    //     // Log the courses array to check for any unexpected structure or duplicates
-    //     console.log("Courses List:", courses);
-    // }, [courses]);
-
     return(
         <main>
             {courses.map((course, index) =>{
