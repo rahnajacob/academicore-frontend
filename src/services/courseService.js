@@ -1,6 +1,6 @@
 import CourseForm from "../components/CourseForm/CourseForm"
 
-const BASE_URL = `${import.meta.env.VITE_EXPRESS_BACKEND_URL}/courses/`
+const BASE_URL = `${import.meta.env.VITE_DJANGO_BACKEND_URL}/courses/`
 
 export const index = async () => {
     try {
